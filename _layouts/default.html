@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% if page.title != "" %}{{ page.title }} – {% endif %}{{ site.name }}</title>
+
+    {% if page.title %}
+      <meta property="og:title" content="{{ page.title }}" />
+      <meta property="twitter:title" content="{{ page.title }}" />
+    {% endif %}
+
+    {% if page.excerpt %}
+      <meta name="description" content="{{ page.excerpt | strip_html }}" />
+      <meta property="og:description" content="{{ page.excerpt | strip_html }}" />
+    {% else %}
+      <meta name="description" content="{{ site.description }}">
+      <meta property="og:description" content="{{ site.description }}" />
+    {% endif %}
+
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="feed.xml" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="{{ site.name }}" />
+
+		<!-- Bootstrap Geocities Theme (c) 2013 Divshot -->
+		<link href="/vendor/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Clippy.js -->
+    <link rel="stylesheet" type="text/css" href="/vendor/clippy.css" media="all">
+
+    <link href="{{ site.url }}/style.css" rel="stylesheet">
+
+    <link rel="apple-touch-icon-precomposed" href="{{ site.url }}/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="{{ site.url }}/assets/favicon.ico" />
+  </head>
+
+	<body id="top" class="preview" data-spy="scroll" data-target=".subnav" data-offset="80">
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<a class="brand" href="/">SBI™</a>
+					<div class="nav-collapse" id="main-menu">
+						<ul class="nav" id="main-menu-left">
+							<li><a href="construction.html">Adventures</a></li>
+							<li><a href="construction.html">Team</a></li>
+							<li><a href="construction.html">Guestbook</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+
+      {{ content }}
+
+			<br><br><br><br>
+
+			<center>
+				<img src="counter.gif">
+			</center>
+			<br><br>
+			<center>
+				<a href="http://isp.netscape.com"><img src="netscape_dragon.gif"></a>
+			</center>
+			<br><br><br>
+		</div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="/vendor/clippy.min.js"></script>
+
+		<!-- Init script -->
+		<script type="text/javascript">
+			clippy.load('Merlin', function(agent) {
+				// Yes look at these callbacks!
+				agent.show();
+        agent.speak('Hello! It looks like you\'re trying to find some adventurers!');
+
+        setTimeout(function() {
+          agent.play('Thinking');
+
+          setTimeout(function() {
+            agent.speak('That\'s a big mistake.');
+          }, 1000);
+        }, 3000);
+			});
+		</script>
+	</body>
+</html>
+</html>

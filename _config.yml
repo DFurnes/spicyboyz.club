@@ -1,0 +1,33 @@
+#
+# Jekyll Settings
+#
+
+name: "Spicy Boyz Inc: Faerun's Spiciest™"
+description: "Your premier source for adventure, intrigue, and large-scale destruction since 1358 DR."
+repository: dfurnes/spicyboyz.club
+permalink: /adventures/:title/
+google_analytics:
+
+collections:
+  adventurers:
+    output: true
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+
+sass:
+  style: :compressed
+
+gems:
+  - jekyll-github-metadata
+  - jekyll-sitemap
+  - jekyll-feed
+  - jemoji
+
+exclude:
+  - LICENSE
+  - README.md
+  - CNAME
